@@ -1,5 +1,7 @@
 import "./App.css";
 import Counter from "./Components/Counter";
+import Posts from "./Components/Posts";
+
 function App() {
   return (
     <div className="App">
@@ -8,6 +10,7 @@ function App() {
       </header>
 
       <Counter />
+      <Posts />
     </div>
   );
 }
