@@ -10,8 +10,6 @@ const Counter = () => {
   const counter = useSelector((state) => state.counter);
   const dispatch = useDispatch();
 
-  console.log("counter value", counter);
-
   return (
     <div
       style={{

@@ -7,8 +7,6 @@ const Posts = () => {
   const posts = useSelector((state) => state.posts.posts);
   const dispatch = useDispatch();
 
-  console.log("post list ::", posts);
-
   useEffect(() => {
     axios
       .get("https://jsonplaceholder.typicode.com/posts")
