@@ -1,4 +1,4 @@
-// when create createAsyncThunk then dont use catch block. Then createAsyncThunk rejected block dont Work.
+// When create createAsyncThunk then don't use catch block. Then createAsyncThunk rejected block does not Work.
 // In createAsyncThunk rejected block automatically we can handle error.
 // If we use catch block then we have to use and return rejectWithValue from catch block.
 
@@ -26,12 +26,12 @@ export const singleUser = createAsyncThunk(
     return res.data;
     // }
     // catch (err) {
-    //   console.log("single user data fetch error6");
+    //   console.log("single user data fetch error");
     //   return rejectWithValue(err);
     // }
 
     // return axios
-    //   .get(`https://jsonplaceholder.typicode.com/usersd/${id}`)
+    //   .get(`https://jsonplaceholder.typicode.com/users/${id}`)
     //   .then((res) => res.data);
     // .catch((err) => {
     //   console.log("single user data fetching error ::", err);
