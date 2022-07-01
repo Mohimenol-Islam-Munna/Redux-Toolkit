@@ -2,13 +2,13 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 
-import { getUsers } from "../store/slices/usersSlice";
+import { getUsers, singleUser } from "../store/slices/usersSlice";
 
 const Users = () => {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
 
-  console.log("users ::", users?.data.length);
+  console.log("users ::", users);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,6 +54,14 @@ const Users = () => {
             <h2>Name : {user?.name} </h2>
             <h3>Company : {user?.company?.name} </h3>
             <h3>Contact : {user?.phone} </h3>
+            <button
+              onClick={() => {
+                console.log("dispatch handler ");
+                dispatch(singleUser(user?.id));
+              }}
+            >
+              Show Details
+            </button>
           </div>
         ))
       ) : (
