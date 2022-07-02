@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { ApiProvider } from "@reduxjs/toolkit/query/react";
 import store from "./store/index";
 import playerSlice from "./store/storeWithRTKQuery";
+import storeRtk from "./store/storeWithRTKQuery";
 
 // ReactDOM.render(
 //   <React.StrictMode>
@@ -19,9 +20,9 @@ import playerSlice from "./store/storeWithRTKQuery";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ApiProvider api={playerSlice}>
+    <Provider store={storeRtk}>
       <App />
-    </ApiProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

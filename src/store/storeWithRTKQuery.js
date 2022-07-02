@@ -1,14 +1,20 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { configureStore } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/query";
+import playersApi from "./services/playersApi";
+import singlePlayerApi from "./services/singlePlayerApi";
 
-const playerSlice = createApi({
-  reducerPath: "playerApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://reqres.in/api" }),
-  endpoints: (builder) => ({
-    getPlayers: builder.query({
-      query: () => "/users",
-    }),
-  }),
+const storeRtk = configureStore({
+  reducer: {
+    [playersApi.reducerPath]: playersApi.reducer,
+    [singlePlayerApi.reducerPath]: singlePlayerApi.reducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(
+      playersApi.middleware,
+      singlePlayerApi.middleware
+    ),
 });
 
-export const { useGetPlayersQuery } = playerSlice;
-export default playerSlice;
+setupListeners(storeRtk.dispatch);
+
+export default storeRtk;

@@ -8,9 +8,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h3>Redux ToolKit Complete Practice</h3>
+        <h3>Redux ToolKit Complete Practice with RTK</h3>
       </header>
-      <RTKComponent /> 
+      <RTKComponent />
       {/* <Users />
       <Counter />
       <Posts /> */}
