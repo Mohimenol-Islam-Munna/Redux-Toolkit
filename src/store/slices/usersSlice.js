@@ -68,7 +68,5 @@ const usersSlice = createSlice({
   },
 });
 
-console.log("usersSlice ::", usersSlice);
-
 export const { getUsers } = usersSlice.actions;
 export default usersSlice.reducer;
