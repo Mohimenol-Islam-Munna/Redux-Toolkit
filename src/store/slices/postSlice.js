@@ -11,6 +11,7 @@ export const postsSlice = createSlice({
   reducers: {
     fetchPosts: (state, action) => {
       state.posts = action.payload.posts;
+      state.loading = false;
     },
   },
 });
