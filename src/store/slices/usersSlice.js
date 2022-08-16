@@ -1,5 +1,5 @@
 // When create createAsyncThunk then don't use catch block. Then createAsyncThunk rejected block does not Work.
-// In createAsyncThunk rejected block automatically we can handle error.
+// In createAsyncThunk rejected block we can automatically handle error.
 // If we use catch block then we have to use and return rejectWithValue from catch block.
 
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
